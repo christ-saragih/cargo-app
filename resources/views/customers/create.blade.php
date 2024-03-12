@@ -8,6 +8,15 @@
                 <h6>Add Customer</h6>
             </div>
             <div class="card-body px-2 pt-0 pb-2">
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('customers.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
