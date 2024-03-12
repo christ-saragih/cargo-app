@@ -1,5 +1,1 @@
-@extends('layouts.master')
-
-@section('content')
-<h1>Aplikasi Cargo</h1>
-@endsection
+<h1>Home Page</h1>
