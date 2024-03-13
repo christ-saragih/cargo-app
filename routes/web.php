@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArmadaController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,14 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/customers/{id}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
     Route::put('/customers/{id}', [CustomerController::class, 'update'])->name('customers.update');
     Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('customers.destroy');
+
+    // Armada
+    Route::get('/armadas', [ArmadaController::class, 'index'])->name('armadas.index');
+    Route::get('/armadas/create', [ArmadaController::class, 'create'])->name('armadas.create');
+    Route::post('/armadas/store', [ArmadaController::class, 'store'])->name('armadas.store');
+    Route::get('/armadas/{id}/edit', [ArmadaController::class, 'edit'])->name('armadas.edit');
+    Route::put('/armadas/{id}', [ArmadaController::class, 'update'])->name('armadas.update');
+    Route::delete('/armadas/{id}', [ArmadaController::class, 'destroy'])->name('armadas.destroy');
 });
 
 
